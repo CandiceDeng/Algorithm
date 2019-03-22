@@ -49,7 +49,7 @@ class Solution {
             }
             result.add(level);
         }
-      //Without reverse requirement, return result directly.
+      //Without bottom-up requirement, return result directly.
       for (int j=result.size()-1; j>=0; j--){  
           reverse.add(result.get(j));
       }
