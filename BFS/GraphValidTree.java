@@ -43,7 +43,7 @@ public class Solution {
                 hash.add(neighbor);
             }
         }
-        return (hash.size()==n);
+        return (hash.size()==n);  //Feature#2 of Tree: Connected Component
         
     }
  
