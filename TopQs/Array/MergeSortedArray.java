@@ -1,0 +1,52 @@
+// Merge Two Sorted Arrays
+
+// Merge two given sorted ascending integer array A and B into a new sorted integer array.
+
+// Example
+// Example 1:
+
+// Input:  A=[1], B=[1]
+// Output: [1,1]	
+// Explanation:  return array merged.
+// Example 2:
+
+// Input:  A=[1,2,3,4], B=[2,4,5,6]
+// Output: [1,2,2,3,4,4,5,6]	
+// Explanation: return array merged.
+// Challenge
+// How can you optimize your algorithm if one array is very large and the other is very small?
+
+public class Solution {
+    /**
+     * @param A: sorted integer array A
+     * @param B: sorted integer array B
+     * @return: A new sorted integer array
+     */
+    public int[] mergeSortedArray(int[] A, int[] B) {
+        //T(n) = O(n);
+        int[] result = new int[A.length+B.length];
+        int i=0,j=0,k=0;
+        while (i<A.length&&j<B.length){
+            if (A[i]<B[j]){
+                result[k] = A[i];
+                i++;
+                k++;
+            }else{
+                result[k] = B[j];
+                j++;
+                k++;
+            }    
+        }
+        while (i<A.length){
+            result[k] = A[i];
+            i++;
+            k++;
+        }
+        while (j<B.length){
+            result[k] = B[j];
+            j++;
+            k++;
+        }
+        return result;
+    }
+}
