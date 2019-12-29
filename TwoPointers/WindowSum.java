@@ -24,18 +24,30 @@ public class Solution {
             return nums;
         }
         int[] result = new int[nums.length-k+1];
-        int start = 0,stop = nums.length-k;
-        int i = 0;
-        while (start<=stop){
-            result[i++] = eachSum(nums,k,start++);
+    //     int start = 0,stop = nums.length-k;
+    //     int i = 0;
+    //     while (start<=stop){
+    //         result[i++] = eachSum(nums,k,start++);
+    //     }
+    //     return result;
+    // }
+    // private int eachSum(int[] nums,int k,int start){
+    //     int total = 0;
+    //     for (int i=start;i<k+start;i++){
+    //         total += nums[i];
+    //     }
+    //     return total;
+        int i=0,j=k;
+        int m = 0;
+        while (j<=nums.length){
+            int total = 0;
+            for (int index = i;index<j;index++){
+                total += nums[index];
+            }
+            result[m++] = total;
+            i++;
+            j++;
         }
         return result;
-    }
-    private int eachSum(int[] nums,int k,int start){
-        int total = 0;
-        for (int i=start;i<k+start;i++){
-            total += nums[i];
-        }
-        return total;
     }
 }
