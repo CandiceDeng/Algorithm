@@ -15,6 +15,7 @@ class Solution {
         if (nums==null||nums.length==0){
             return 0;
         }
+        Arrays.sort(nums);
         int result = 0;
         int small = 0, big = nums.length-1;
         while (small<big){
