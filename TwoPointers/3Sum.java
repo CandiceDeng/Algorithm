@@ -22,7 +22,7 @@ class Solution {
         if (nums==null||nums.length==0){
             return result;
         }
-        //HashMap
+        //HashMap O(n^2)
         // Arrays.sort(nums);
         // Map<Integer,Integer> map = new HashMap<>();
         // for (int i=0;i<nums.length;i++){
@@ -49,7 +49,7 @@ class Solution {
         // }
         // return result;
         
-        //Two pointers
+        //Two pointers O(nlogn)
         Arrays.sort(nums);
         for (int i=0;i<nums.length-2;i++){
             if (i>0&&nums[i]==nums[i-1]){
